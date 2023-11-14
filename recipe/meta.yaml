@@ -10,9 +10,16 @@ source:
     sha256: 4807d374e645bd68334e4f487ba85a27189dbc1267a98e644aa686a7927e0559
     patches:
       - patches/0001-Remove-runtime-dependency-on-setuptools.patch
-  - git_url: https://github.com/maxmind/MaxMind-DB-Reader-python.git
-    ref: v{{version}}
+
+  # Because of https://github.com/maxmind/MaxMind-DB-Reader-python/blob/v2.5.1/.gitmodules#L6
+  # we can't use git_url. It fails on prefect because we don't have a proper ssh key setup.
+  - url: https://github.com/maxmind/MaxMind-DB-Reader-python/archive/refs/tags/v2.5.1.tar.gz
+    sha256: fe6ce9978ade80246f5b43aa70b5f7dd333e4423b1fe04a411169d4e8d236b71
     folder: git-repo
+
+  - url: https://github.com/maxmind/MaxMind-DB/archive/a75bfb17a0e77f576c9eef0cfbf6220909e959e7.zip
+    sha256: c2f9f760e11c64f8c41d168929545f7f7a0ea14d3d2b61433e188b880b550f4a
+    folder: git-repo/tests/data
 
 build:
   number: 0
