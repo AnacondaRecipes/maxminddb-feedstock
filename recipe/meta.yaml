@@ -13,7 +13,7 @@ source:
 
   # Because of https://github.com/maxmind/MaxMind-DB-Reader-python/blob/v2.5.1/.gitmodules#L6
   # we can't use git_url. It fails on prefect because we don't have a proper ssh key setup.
-  - url: https://github.com/maxmind/MaxMind-DB-Reader-python/archive/refs/tags/v2.5.1.tar.gz
+  - url: https://github.com/maxmind/MaxMind-DB-Reader-python/archive/refs/tags/v{{ version }}.tar.gz
     sha256: fe6ce9978ade80246f5b43aa70b5f7dd333e4423b1fe04a411169d4e8d236b71
     folder: git-repo
 
