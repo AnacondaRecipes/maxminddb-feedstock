@@ -22,16 +22,15 @@ source:
     folder: git-repo/tests/data
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - git  # [not win]
-    - m2-patch  # [win]
-    - patch  # [not win]
   host:
     - python
     - pip
